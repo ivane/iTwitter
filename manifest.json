@@ -1,0 +1,27 @@
+{
+    "name":"Twit",
+    "version":"1.0",
+    "manifest_version":2,
+    "description":"The Simple Twitter",
+    "icons":{
+        "128":"icon.png"
+    },
+//    "browser_action":{
+//        "default_icon":"icon.png",
+//        "default_title":"Twit",
+//        "default_popup":"popup.html"
+//    },
+    "browser_action":{
+        "default_icon":"icon.png"
+    },
+//    "permissions":[
+//    "http://api.flickr.com/"
+//    ]
+    "content_scripts":[
+        {
+            "matches":["*://*.twitter.com/*"],
+            "css":["sstwitter.css"],
+            "js":["jquery-2.1.0.min.js","sstwitter.js"]
+        }
+    ]
+}
