@@ -1,6 +1,6 @@
 #iTwitter
 
-iTwitter Simplified the twitter web design, make the twitter simple, clear and easy.
+iTwitter simplified the twitter interface, make the twitter simple, clear and easy.
 
 ##Features
 
