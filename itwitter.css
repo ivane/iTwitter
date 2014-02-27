@@ -193,6 +193,11 @@ li.stream-item,
     display:block !important;
 }
 
+/* Quote Tweet icon color */
+.retweeted #QuoteTweet .Icon--retweet {
+    color:#999 !important;
+}
+
 /* ============ Connect Page ============ */
 /* Connect page favorite or retweet tweet content font size */
 .stream-item-activity-me .latest-tweet {
@@ -226,4 +231,9 @@ li.stream-item,
 .new-tweets-bar {
     padding:15px 0 !important;
     font-size:14px !important;
+}
+
+/* ============ Test ============ */
+.test {
+    background:#DE0000 !important;
 }
