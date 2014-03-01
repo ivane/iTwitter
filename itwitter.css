@@ -46,6 +46,9 @@ html,body {
 /* Hide the photo in the default timleline */
 .is-preview,
 
+/* Hide the instgaram photo by default */
+.cards-instagram,
+
 /* ? */
 .expanded-content,
 
@@ -189,7 +192,10 @@ li.stream-item,
 /* ============ Tweet Detail ============ */
 /* Default display the photo and tweet actions */
 .wrapper-permalink .is-preview,
-.wrapper-permalink .tweet-actions {
+.wrapper-permalink .tweet-actions,
+/* Instagram photo display when tweet opened */
+.open .cards-instagram,
+.wrapper-permalink .cards-instagram {
     display:block !important;
 }
 
