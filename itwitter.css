@@ -204,6 +204,11 @@ li.stream-item,
     color:#999 !important;
 }
 
+/* Instagram Photo Spacing */
+.cards-instagram {
+    padding-top:16px !important;
+}
+
 /* ============ Connect Page ============ */
 /* Connect page favorite or retweet tweet content font size */
 .stream-item-activity-me .latest-tweet {
