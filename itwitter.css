@@ -47,7 +47,9 @@ html,body {
 .is-preview,
 
 /* Hide the instgaram photo by default */
-.cards-instagram,
+.wrapper-home .cards-instagram,
+.wrapper-connect .cards-instagram,
+.wrapper-search .cards-instagram,
 
 /* ? */
 .expanded-content,
@@ -194,8 +196,8 @@ li.stream-item,
 .wrapper-permalink .is-preview,
 .wrapper-permalink .tweet-actions,
 /* Instagram photo display when tweet opened */
-.open .cards-instagram,
-.wrapper-permalink .cards-instagram {
+.open .cards-instagram
+/*.wrapper-permalink .cards-instagram*/ {
     display:block !important;
 }
 
