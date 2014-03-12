@@ -1,6 +1,6 @@
 {
     "name":"iTwitter",
-    "version":"3.3",
+    "version":"3.41",
     "manifest_version":2,
     "description":"Make the twitter simple, clear and easy.",
     "homepage_url":"https://twitter.com/ivane",
@@ -29,6 +29,7 @@
         }
     ],
     "web_accessible_resources":[
-        "itwitter.js"
+        "itwitter.js",
+        "logo_64x64.png"
     ]
 }

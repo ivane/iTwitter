@@ -24,6 +24,9 @@ window.onload = function() {
         }
     });
 
+    // Quote Tweet | Keyboard Event
+
+
     // Quote Tweet popup
     $('body').on('click','li.action-quote-tweet a',function(eqt){
         eqt.preventDefault();
@@ -68,17 +71,17 @@ window.onload = function() {
     //Instagram Photo | Permalink Page
     function InstagramPhotoPermalink() {
         var arr = [];
-        $('.permalink-tweet').find('.js-display-url').each(function() {
-            if($(this).text().toLowerCase().match(/instagram\.com\/p\/[a-zA-Z0-9\_\-]{10}\//) || $(this).text().toLowerCase().match(/instagr\.am\/p\/[a-zA-Z0-9\_\-]{10}\//)) {
+        $('.permalink-tweet-container').find('.js-display-url').each(function() {
+                if($(this).text().toLowerCase().match(/instagram\.com\/p\/[a-zA-Z0-9\_\-]{10}\//) || $(this).text().toLowerCase().match(/instagr\.am\/p\/[a-zA-Z0-9\_\-]{10}\//)) {
                 arr.push($(this).text());
             }
-            if($('.permalink-tweet').find('.cards-instagram').length == 0) {
-                for(var i=0; i<arr.length; i++) {
-                    var Instagram_Link_photo = "http://"+arr[i]+"media/?size=l";
-                    $('.permalink-tweet').find('.stream-item-footer').after('<div data-card-url="'+Instagram_Link_photo+'" data-card-type="photo" class="cards-base cards-multimedia cards-instagram" data-element-context="platform_photo_card"><div class="cards-media-container js-media-container"><a href="'+Instagram_Link_photo+'" class="media media-thumbnail twitter-timeline-link media-forward is-preview" data-url="'+Instagram_Link_photo+'" data-resolved-url-large="'+Instagram_Link_photo+'"><div class="is-preview"><img src="'+Instagram_Link_photo+'" width="100%" alt="Embedded image permalink" /></div></a></div></div>');
-                }
-            }
         });
+        if($('.permalink-tweet-container .cards-instagram').length == 0) {
+            for(var i=0; i<arr.length; i++) {
+                var Instagram_Link_photo = "http://"+arr[i]+"media/?size=l";
+                $('.permalink-tweet').find('.stream-item-footer').after('<div data-card-url="'+Instagram_Link_photo+'" data-card-type="photo" class="cards-base cards-multimedia cards-instagram" data-element-context="platform_photo_card"><div class="cards-media-container js-media-container"><a href="'+Instagram_Link_photo+'" class="media media-thumbnail twitter-timeline-link media-forward is-preview" data-url="'+Instagram_Link_photo+'" data-resolved-url-large="'+Instagram_Link_photo+'"><div class="is-preview"><img src="'+Instagram_Link_photo+'" width="100%" alt="Embedded image permalink" /></div></a></div></div>');
+            }
+        }
     }
 
     //Permalink Page: Quote Tweet & Instagram Photo
@@ -109,5 +112,25 @@ window.onload = function() {
         AddQuoteTweet();
         InstagramPhotoPermalink();
     }
+
+    //iTwitter Notice
+    function setFlag() {
+        localStorage.flag = 1;
+    }
+    function getFlag() {
+        if(localStorage.hasOwnProperty('flag')) {
+            return localStorage.flag;
+        } else {
+            return false;
+        }
+    }
+    if(!getFlag()) {
+        $('.global-nav .container').append('<div class="itwitter-notice itwitter-animation-block"><p>Can not find the <strong>New Tweet Button</strong> ?</p><p>Try to press the <strong>"n" key</strong> on your keyboard, enjoy!</p><p class="itwitter-notice-cn-line">找不到发新推的按钮？</p><p>试试按下键盘的“n”键，是不是方便很多，嘻嘻！</p><p class="itwitter-notice-cn-line"><a href="##" class="btn primary-btn itwitter-notice-close">I got it. 嗯啊~</a></p><span class="icon close itwitter-notice-close" aria-hidden="true"><span class="visuallyhidden">Close</span></span></div>');
+    }
+
+    $('.itwitter-notice-close').click(function() {
+        setFlag();
+        $(this).parents('.itwitter-notice').addClass('itwitter-animation-hidden').delay(1000).fadeOut('100');
+    });
 
 };

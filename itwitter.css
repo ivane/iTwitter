@@ -47,9 +47,7 @@ html,body {
 .is-preview,
 
 /* Hide the instgaram photo by default */
-.wrapper-home .cards-instagram,
-.wrapper-connect .cards-instagram,
-.wrapper-search .cards-instagram,
+.cards-instagram,
 
 /* ? */
 .expanded-content,
@@ -196,8 +194,8 @@ li.stream-item,
 .wrapper-permalink .is-preview,
 .wrapper-permalink .tweet-actions,
 /* Instagram photo display when tweet opened */
-.open .cards-instagram
-/*.wrapper-permalink .cards-instagram*/ {
+.open .cards-instagram,
+.wrapper-permalink .cards-instagram {
     display:block !important;
 }
 
@@ -244,6 +242,148 @@ li.stream-item,
 .new-tweets-bar {
     padding:15px 0 !important;
     font-size:14px !important;
+}
+
+/* ============ iTwitter Notice ============ */
+.itwitter-notice {
+    margin:0 0 10px;
+    background:url(chrome-extension://ndelaoaaaljnlnaohgopoaflinhafibm/logo_64x64.png) 10px 10px #FFF no-repeat;
+    border:0 solid rgba(0,0,0,0.25);
+    box-shadow:0 1px 4px rgba(0,0,0,0.25);
+    width:370px;
+    padding:20px 5px 5px 85px;
+    border-radius:4px;
+    color:#292f33;
+    position:absolute;
+    right:-15px;
+    top:57px;
+    z-index:900;
+    text-align:left;
+}
+
+.itwitter-notice p {
+    margin-bottom:6px;
+    line-height:20px;
+    font-size:16px;
+}
+
+.itwitter-notice p.itwitter-notice-cn-line {
+    padding-top:5px;
+}
+
+.itwitter-notice .close {
+    position:absolute;
+    right:5px;
+    top:10px;
+    width:12px;
+    height:12px;
+    cursor:pointer;
+}
+
+.itwitter-notice:before {
+    content:"";
+    position:absolute;
+    right:25px;
+    top:-14px;
+    z-index:901;
+    width:0;
+    height:0;
+    font-size:0;
+    line-height:0;
+    border-color:transparent transparent #FFF;
+    border-style:solid;
+    border-width:7px;
+}
+
+.itwitter-notice:after {
+    content:"";
+    position:absolute;
+    right:24px;
+    top:-17px;
+    z-index:888;
+    width:0;
+    height:0;
+    font-size:0;
+    line-height:0;
+    border-color:transparent transparent rgba(0,0,0,0.05);
+    border-style:solid;
+    border-width:8px;
+}
+
+.itwitter-animation-block {
+    -webkit-animation-duration:1s;
+    animation-duration:1s;
+    -webkit-animation-fill-mode:both;
+    animation-fill-mode:both;
+    -webkit-animation-name:fadeInUp;
+    animation-name:fadeInUp;
+}
+
+@-webkit-keyframes fadeInUp {
+    0% {
+        opacity:0;
+        -webkit-transform:translateY(20px);
+        transform:translateY(20px);
+    }
+    100% {
+        opacity:1;
+        -webkit-transform:translateY(0);
+        transform:translateY(0);
+    }
+}
+
+@keyframes fadeInUp {
+    0% {
+        opacity:0;
+        -webkit-transform:translateY(20px);
+        -ms-transform:translateY(20px);
+        transform:translateY(20px);
+    }
+    100% {
+        opacity:1;
+        -webkit-transform:translateY(0);
+        -ms-transform:translateY(0);
+        transform:translateY(0);
+    }
+}
+
+.itwitter-animation-hidden {
+    -webkit-animation-duration: 1s;
+    animation-duration: 1s;
+    -webkit-animation-fill-mode: both;
+    animation-fill-mode: both;
+    -webkit-animation-name:fadeOutDown;
+    animation-name:fadeOutDown;
+}
+
+@-webkit-keyframes fadeOutDown {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        transform: translateY(20px);
+    }
+}
+
+@keyframes fadeOutDown {
+    0% {
+        opacity: 1;
+        -webkit-transform: translateY(0);
+        -ms-transform: translateY(0);
+        transform: translateY(0);
+    }
+
+    100% {
+        opacity: 0;
+        -webkit-transform: translateY(20px);
+        -ms-transform: translateY(20px);
+        transform: translateY(20px);
+    }
 }
 
 /* ============ Test ============ */
