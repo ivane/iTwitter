@@ -122,6 +122,10 @@ html,body {
     top:60px !important;
     width:160px !important;
 }
+.wrapper-settings .dashboard {
+    left:-190px !important;
+    width:180px !important;
+}
 
 /* Main content */
 .content-main {
@@ -384,6 +388,11 @@ li.stream-item,
         -ms-transform: translateY(20px);
         transform: translateY(20px);
     }
+}
+
+/* ============ Fuck the AdBlock ============ */
+.stream-item .promoted-tweet {
+    display:block !important;
 }
 
 /* ============ Test ============ */
