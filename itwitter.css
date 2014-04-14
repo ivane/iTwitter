@@ -45,6 +45,7 @@ html,body {
 
 /* Hide the photo in the default timleline */
 .is-preview,
+.cards-media-container,
 
 /* Hide the instgaram photo by default */
 .cards-instagram,
@@ -53,7 +54,7 @@ html,body {
 .expanded-content,
 
 /* Tweet option,like "reply", "Retweet"... */
-.tweet-actions,
+/*.tweet-actions,*/
 
 /* Signup form when you not sign in */
 .signup-call-out.profile-signup-call-out {
@@ -142,7 +143,8 @@ html,body {
 
 /* Display the photo and other content when timeline tweet expand */
 .stream-item.open .is-preview,
-.stream-item.open .expanded-content {
+.stream-item.open .expanded-content,
+.stream-item.open .cards-media-container {
     display:block !important;
 }
 
@@ -150,8 +152,8 @@ html,body {
 li.stream-item,
 .tweets-wrapper li,
 .recent-tweets li {
-    font-size:16px !important;
-    line-height:26px !important;
+    font-size:17px !important;
+    line-height:28px !important;
 }
 
 .tweet {
@@ -188,15 +190,22 @@ li.stream-item,
     max-width:100% !important;
 }
 
+.tweet-actions {
+    visibility:hidden;
+}
+
 .tweet:hover .tweet-actions,
 .stream-item.open .tweet-actions {
-    display:inline-block !important;
+    visibility:visible;
+    /*display:table-cell !important;*/
+    /*text-align:right !important;*/
 }
 
 /* ============ Tweet Detail ============ */
 /* Default display the photo and tweet actions */
 .wrapper-permalink .is-preview,
 .wrapper-permalink .tweet-actions,
+.wrapper-permalink .cards-media-container,
 /* Instagram photo display when tweet opened */
 .open .cards-instagram,
 .wrapper-permalink .cards-instagram {
@@ -393,6 +402,17 @@ li.stream-item,
 /* ============ Fuck the AdBlock ============ */
 .stream-item .promoted-tweet {
     display:block !important;
+}
+
+/* ============ Popup ============ */
+#profile_popup .tweet-actions,
+.Gallery-content .tweet-actions {
+    display:inline-block !important;
+}
+
+.Gallery-content .tweet-text,
+.Gallery-content .tweet-actions {
+    padding-top:5px;
 }
 
 /* ============ Test ============ */
